@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
+import me.kryniowesegryderiusz.kgenerators.listeners.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -31,14 +32,6 @@ import me.kryniowesegryderiusz.kgenerators.generators.schedules.SchedulesManager
 import me.kryniowesegryderiusz.kgenerators.generators.upgrades.UpgradesManager;
 import me.kryniowesegryderiusz.kgenerators.gui.MenusManager;
 import me.kryniowesegryderiusz.kgenerators.lang.Lang;
-import me.kryniowesegryderiusz.kgenerators.listeners.BlockBreakListener;
-import me.kryniowesegryderiusz.kgenerators.listeners.BlockPistonListener;
-import me.kryniowesegryderiusz.kgenerators.listeners.BlockPlaceListener;
-import me.kryniowesegryderiusz.kgenerators.listeners.CraftingListeners;
-import me.kryniowesegryderiusz.kgenerators.listeners.FurnaceSmeltListener;
-import me.kryniowesegryderiusz.kgenerators.listeners.InventoryClickListener;
-import me.kryniowesegryderiusz.kgenerators.listeners.GeneratorProtectionListeners;
-import me.kryniowesegryderiusz.kgenerators.listeners.PlayerInteractListener;
 import me.kryniowesegryderiusz.kgenerators.logger.Logger;
 import me.kryniowesegryderiusz.kgenerators.multiversion.MultiVersionManager;
 import me.kryniowesegryderiusz.kgenerators.settings.Settings;
@@ -173,6 +166,7 @@ public class Main extends JavaPlugin {
 			this.getServer().getPluginManager().registerEvents(new InventoryClickListener(), this);
 			this.getServer().getPluginManager().registerEvents(new FurnaceSmeltListener(), this);
 			this.getServer().getPluginManager().registerEvents(new GeneratorProtectionListeners(), this);
+			this.getServer().getPluginManager().registerEvents(new WorldListeners(), this);
 			//Chunk listeners were moved to PlacedGeneratorsManager
 			
 			/* 
